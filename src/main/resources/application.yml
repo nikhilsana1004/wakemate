@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: wakemate
+
+  datasource:
+    url: jdbc:h2:mem:wakematedb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+
+  # Java 25 Virtual Threads - one line, massive concurrency benefit
+  threads:
+    virtual:
+      enabled: true
+
+telegram:
+  bot:
+    token: ${TELEGRAM_BOT_TOKEN}
+    username: ${TELEGRAM_BOT_USERNAME}
+
+sendgrid:
+  api-key: ${SENDGRID_API_KEY}
+  from-email: ${SENDGRID_FROM_EMAIL:noreply@wakemate.app}
+
+wakemate:
+  grace-period-minutes: 5
+  check-interval-ms: 30000
+
+# LLM keys for natural language alarm parsing
+# Claude is tried first, OpenAI is the fallback
+# If both are missing the bot falls back to step-by-step mode
+anthropic:
+  api-key: ${ANTHROPIC_API_KEY:}
+
+openai:
+  api-key: ${OPENAI_API_KEY:}
