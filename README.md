@@ -103,22 +103,4 @@ The AlarmScheduler checks every 30 seconds for state transitions.
 
 ---
 
-## LinkedIn Post Ideas
-
-- "I missed an alarm and built a Telegram bot that emails someone if I don't wake up."
-- "Java 25 sealed interfaces let me model bot conversation state with compiler-enforced exhaustiveness."
-- "One line in Spring Boot 4 enables Java 25 virtual threads across the whole app."
-
----
-
-## Future Ideas
-
-- PostgreSQL instead of H2 for persistent storage on Railway
-- SMS fallback via Twilio
-- Snooze support: /snooze 10
-- Recurring alarms for weekdays
-- Telegram inline keyboard buttons instead of typing /awake
-
----
-
 Built with Java 25 - Spring Boot 4 - Telegram Bot API - SendGrid
